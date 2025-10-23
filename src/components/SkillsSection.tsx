@@ -70,7 +70,7 @@ const SkillsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
               className={`group relative overflow-hidden rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
                 isDark 
                   ? 'bg-gradient-to-br from-gray-800 to-gray-800/50 border border-gray-700/50 hover:border-cyan-500/50' 
-                  : 'bg-white border border-gray-200 hover:border-cyan-300'
+                  : 'bg-gray-50 border border-gray-300 hover:border-cyan-500'
               }`}
             >
               {/* Background gradient effect on hover */}
@@ -86,15 +86,15 @@ const SkillsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                   <div className={`p-2 sm:p-3 rounded-lg transition-all duration-300 ${
                     isDark 
                       ? 'bg-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500/30 group-hover:text-cyan-300' 
-                      : 'bg-cyan-100 text-cyan-600 group-hover:bg-cyan-200'
+                      : 'bg-cyan-200 text-cyan-700 group-hover:bg-cyan-300'
                   }`}>
                     {getIcon(category.icon)}
                   </div>
                   <h3
-                    className={`text-sm sm:text-lg font-bold transition-colors duration-300 ${
+                    className={`text-xs sm:text-lg font-bold transition-colors duration-300 ${
                       isDark 
                         ? 'text-white group-hover:text-cyan-300' 
-                        : 'text-gray-900 group-hover:text-cyan-600'
+                        : 'text-gray-800 group-hover:text-cyan-700'
                     }`}
                   >
                     {category.name}
@@ -115,7 +115,7 @@ const SkillsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                       className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-medium transition-all duration-300 hover:scale-110 cursor-default ${
                         isDark
                           ? 'bg-gray-700/60 text-cyan-300 hover:bg-cyan-500/30 hover:text-cyan-200'
-                          : 'bg-gray-100 text-cyan-700 hover:bg-cyan-100 hover:text-cyan-800'
+                          : 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200 hover:text-cyan-800'
                       }`}
                     >
                       {skill}

@@ -57,7 +57,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
               key={idx}
               variants={itemVariants}
               className={`group rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
-                isDark ? 'bg-gray-800 border border-gray-700/50' : 'bg-white border border-gray-200'
+                isDark ? 'bg-gray-800 border border-gray-700/50' : 'bg-white border border-gray-300 hover:border-cyan-500'
               }`}
             >
               {/* Image */}
@@ -73,38 +73,6 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div
-                  className={`absolute inset-0 ${
-                    isDark ? 'bg-gray-900/0' : 'bg-black/0'
-                  } group-hover:${
-                    isDark ? 'bg-gray-900/40' : 'bg-black/40'
-                  } transition-all duration-300 flex items-center justify-center gap-3 sm:gap-4 opacity-0 group-hover:opacity-100`}
-                >
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 sm:p-3 rounded-lg transition-all transform hover:scale-110 ${
-                      isDark
-                        ? 'bg-cyan-500/80 hover:bg-cyan-500 text-white'
-                        : 'bg-cyan-600/80 hover:bg-cyan-600 text-white'
-                    }`}
-                  >
-                    <Github size={18} className="sm:w-5 sm:h-5" />
-                  </a>
-                  <a
-                    href={project.projectLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 sm:p-3 rounded-lg transition-all transform hover:scale-110 ${
-                      isDark
-                        ? 'bg-cyan-500/80 hover:bg-cyan-500 text-white'
-                        : 'bg-cyan-600/80 hover:bg-cyan-600 text-white'
-                    }`}
-                  >
-                    <ExternalLink size={18} className="sm:w-5 sm:h-5" />
-                  </a>
-                </div>
               </div>
 
               {/* Content */}
@@ -131,7 +99,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                     className={`flex-1 py-2 px-3 rounded text-center text-xs sm:text-sm font-medium transition-all ${
                       isDark
                         ? 'bg-gray-700 text-cyan-400 hover:bg-cyan-500/30'
-                        : 'bg-gray-100 text-cyan-700 hover:bg-gray-200'
+                        : 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200'
                     }`}
                   >
                     GitHub
@@ -143,7 +111,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                     className={`flex-1 py-2 px-3 rounded text-center text-xs sm:text-sm font-medium transition-all ${
                       isDark
                         ? 'bg-gray-700 text-cyan-400 hover:bg-cyan-500/30'
-                        : 'bg-gray-100 text-cyan-700 hover:bg-gray-200'
+                        : 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200'
                     }`}
                   >
                     Projeto
