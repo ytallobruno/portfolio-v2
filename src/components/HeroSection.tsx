@@ -57,7 +57,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     <section
       id="hero"
       className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ${
-        isDark ? 'bg-gray-950' : 'bg-white'
+        isDark ? 'bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900' : 'bg-white'
       }`}
     >
       {/* Light Rays Background */}
@@ -195,23 +195,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
             </a>
           </motion.div>
 
-          {/* CTA Button */}
-          <motion.div variants={itemVariants}>
-            <button
-              onClick={() => {
-                const element = document.getElementById('projects');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className={`inline-flex items-center gap-2 px-8 py-3 rounded-lg font-medium transition-all duration-300 ${
-                isDark
-                  ? 'bg-cyan-500 hover:bg-cyan-600 text-gray-950'
-                  : 'bg-cyan-600 hover:bg-cyan-700 text-white'
-              }`}
-            >
-              Ver Projetos
-              <ExternalLink size={18} />
-            </button>
-          </motion.div>
+
         </motion.div>
       </div>
 
