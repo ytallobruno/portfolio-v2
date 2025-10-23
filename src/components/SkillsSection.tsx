@@ -45,7 +45,7 @@ const SkillsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     <section
       id="skills"
       className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${
-        isDark ? 'bg-gray-900' : 'bg-white'
+        isDark ? 'bg-gray-900' : 'bg-gray-50'
       }`}
     >
       <div className="max-w-6xl mx-auto">

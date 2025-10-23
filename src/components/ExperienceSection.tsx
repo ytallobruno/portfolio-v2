@@ -31,7 +31,7 @@ const ExperienceSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     <section
       id="experience"
       className={`py-20 px-4 sm:px-6 lg:px-8 ${
-        isDark ? 'bg-gray-900' : 'bg-white'
+        isDark ? 'bg-gray-900' : 'bg-gray-50'
       }`}
     >
       <div className="max-w-5xl mx-auto">

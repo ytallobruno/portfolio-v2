@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LightRays from './LightRays';
 
@@ -57,22 +57,22 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     <section
       id="hero"
       className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-16 px-4 sm:px-6 lg:px-8 ${
-        isDark ? 'bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900' : 'bg-white'
+        isDark ? 'bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900' : 'bg-gray-50'
       }`}
     >
       {/* Light Rays Background */}
       <div className="absolute inset-0 z-0">
         <LightRays
           raysOrigin="top-center"
-          raysColor={isDark ? '#06B6D4' : '#0891B2'}
-          raysSpeed={0.8}
+          raysColor={isDark ? '#00E5FF' : '#06B6D4'}
+          raysSpeed={1.0}
           lightSpread={0.6}
-          rayLength={1.5}
-          fadeDistance={1.2}
-          saturation={0.8}
-          followMouse={true}
-          mouseInfluence={0.08}
-          className="opacity-40"
+          rayLength={1.0}
+          fadeDistance={1.0}
+          saturation={3}
+          followMouse={false}
+          mouseInfluence={0}
+          className="opacity-70"
         />
       </div>
 
@@ -183,17 +183,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
             >
               <Linkedin size={20} className="sm:w-6 sm:h-6" />
             </a>
-            <a
-              href="mailto:ytallo.bruno@gmail.com"
-              className={`p-3 sm:p-4 rounded-lg transition-all hover:scale-110 ${
-                isDark
-                  ? 'bg-gray-800 text-gray-400 hover:bg-cyan-500/20 hover:text-cyan-400'
-                  : 'bg-gray-100 text-gray-600 hover:bg-cyan-100 hover:text-cyan-600'
-              }`}
-              aria-label="Email"
-            >
-              <Mail size={20} className="sm:w-6 sm:h-6" />
-            </a>
+
           </motion.div>
         </motion.div>
       </div>

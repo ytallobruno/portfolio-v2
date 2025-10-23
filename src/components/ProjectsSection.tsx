@@ -31,7 +31,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     <section
       id="projects"
       className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${
-        isDark ? 'bg-gray-900' : 'bg-white'
+        isDark ? 'bg-gray-900' : 'bg-gray-50'
       }`}
     >
       <div className="max-w-6xl mx-auto">
@@ -56,7 +56,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className={`group rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
+              className={`group rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col ${
                 isDark ? 'bg-gray-800 border border-gray-700/50' : 'bg-white border border-gray-300 hover:border-cyan-500'
               }`}
             >
@@ -76,7 +76,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
               </div>
 
               {/* Content */}
-              <div className="p-4 sm:p-6">
+              <div className="p-4 sm:p-6 flex flex-col flex-grow">
                 <h3
                   className={`text-lg sm:text-xl font-bold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
@@ -91,15 +91,15 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                 >
                   {project.description}
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-3 sm:gap-4 mt-auto">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 py-2 px-3 rounded text-center text-xs sm:text-sm font-medium transition-all ${
+                    className={`flex-1 py-2.5 sm:py-3 px-4 rounded-lg text-center text-xs sm:text-sm font-bold transition-all duration-300 ${
                       isDark
-                        ? 'bg-gray-700 text-cyan-400 hover:bg-cyan-500/30'
-                        : 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200'
+                        ? 'bg-gray-900 text-cyan-400 border border-gray-700 hover:bg-cyan-900 hover:border-cyan-900 hover:text-cyan-300'
+                        : 'bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400'
                     }`}
                   >
                     GitHub
@@ -108,10 +108,10 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                     href={project.projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 py-2 px-3 rounded text-center text-xs sm:text-sm font-medium transition-all ${
+                    className={`flex-1 py-2.5 sm:py-3 px-4 rounded-lg text-center text-xs sm:text-sm font-bold transition-all duration-300 ${
                       isDark
-                        ? 'bg-gray-700 text-cyan-400 hover:bg-cyan-500/30'
-                        : 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200'
+                        ? 'bg-cyan-500 text-gray-900 border border-cyan-500 hover:bg-cyan-400 hover:border-cyan-400'
+                        : 'bg-cyan-600 text-white border border-cyan-600 hover:bg-cyan-700 hover:border-cyan-700'
                     }`}
                   >
                     Projeto
