@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 
 interface NavbarProps {
@@ -12,6 +12,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -74,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
             </Link>
           </div>
 
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map(item => (
               <button
@@ -104,6 +106,19 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
             ))}
           </div>
 
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isDark
+                ? 'text-gray-400 hover:text-white'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
           {/* Theme Toggle */}
           <button
             onClick={onThemeToggle}
@@ -117,6 +132,37 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div
+            className={`md:hidden border-t ${
+              isDark
+                ? 'border-gray-800 bg-gray-900/95'
+                : 'border-gray-200 bg-white/95'
+            }`}
+          >
+            <div className="px-4 py-4 space-y-3">
+              {navItems.map(item => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`block w-full text-left px-4 py-2 rounded-lg font-medium transition-colors ${
+                    activeSection === item.id
+                      ? isDark
+                        ? 'bg-cyan-500/20 text-cyan-400'
+                        : 'bg-cyan-100 text-cyan-600'
+                      : isDark
+                      ? 'text-gray-400 hover:bg-gray-800 hover:text-white'
+                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

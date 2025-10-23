@@ -30,7 +30,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
   return (
     <section
       id="projects"
-      className={`py-20 px-4 sm:px-6 lg:px-8 ${
+      className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${
         isDark ? 'bg-gray-900' : 'bg-white'
       }`}
     >
@@ -39,7 +39,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className={`text-4xl font-bold mb-12 text-center ${
+          className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center ${
             isDark ? 'text-white' : 'text-gray-900'
           }`}
         >
@@ -50,7 +50,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {projects.map((project, idx) => (
             <motion.div
@@ -62,62 +62,62 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
             >
               {/* Image */}
               <div
-                className={`h-48 overflow-hidden relative bg-gradient-to-br ${
+                className={`h-40 sm:h-48 overflow-hidden relative bg-gradient-to-br ${
                   isDark
                     ? 'from-gray-800 to-gray-700'
                     : 'from-gray-200 to-gray-100'
                 }`}
               >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
                 <div
                   className={`absolute inset-0 ${
                     isDark ? 'bg-gray-900/0' : 'bg-black/0'
                   } group-hover:${
                     isDark ? 'bg-gray-900/40' : 'bg-black/40'
-                  } transition-all duration-300 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100`}
+                  } transition-all duration-300 flex items-center justify-center gap-3 sm:gap-4 opacity-0 group-hover:opacity-100`}
                 >
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 rounded-lg transition-all transform hover:scale-110 ${
+                    className={`p-2 sm:p-3 rounded-lg transition-all transform hover:scale-110 ${
                       isDark
                         ? 'bg-cyan-500/80 hover:bg-cyan-500 text-white'
                         : 'bg-cyan-600/80 hover:bg-cyan-600 text-white'
                     }`}
                   >
-                    <Github size={20} />
+                    <Github size={18} className="sm:w-5 sm:h-5" />
                   </a>
                   <a
                     href={project.projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 rounded-lg transition-all transform hover:scale-110 ${
+                    className={`p-2 sm:p-3 rounded-lg transition-all transform hover:scale-110 ${
                       isDark
                         ? 'bg-cyan-500/80 hover:bg-cyan-500 text-white'
                         : 'bg-cyan-600/80 hover:bg-cyan-600 text-white'
                     }`}
                   >
-                    <ExternalLink size={20} />
+                    <ExternalLink size={18} className="sm:w-5 sm:h-5" />
                   </a>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <h3
-                  className={`text-xl font-bold mb-2 ${
+                  className={`text-lg sm:text-xl font-bold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   {project.title}
                 </h3>
                 <p
-                  className={`text-sm mb-4 leading-relaxed ${
+                  className={`text-xs sm:text-sm mb-4 leading-relaxed ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
                   }`}
                 >
@@ -128,7 +128,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 py-2 px-3 rounded text-center text-sm font-medium transition-all ${
+                    className={`flex-1 py-2 px-3 rounded text-center text-xs sm:text-sm font-medium transition-all ${
                       isDark
                         ? 'bg-gray-700 text-cyan-400 hover:bg-cyan-500/30'
                         : 'bg-gray-100 text-cyan-700 hover:bg-gray-200'
@@ -140,7 +140,7 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                     href={project.projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 py-2 px-3 rounded text-center text-sm font-medium transition-all ${
+                    className={`flex-1 py-2 px-3 rounded text-center text-xs sm:text-sm font-medium transition-all ${
                       isDark
                         ? 'bg-gray-700 text-cyan-400 hover:bg-cyan-500/30'
                         : 'bg-gray-100 text-cyan-700 hover:bg-gray-200'

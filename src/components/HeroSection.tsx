@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LightRays from './LightRays';
 
@@ -56,7 +56,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
   return (
     <section
       id="hero"
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ${
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-16 px-4 sm:px-6 lg:px-8 ${
         isDark ? 'bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900' : 'bg-white'
       }`}
     >
@@ -77,18 +77,18 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {/* Avatar */}
           <motion.div variants={itemVariants} className="flex justify-center">
             {loading ? (
               <div
-                className={`w-32 h-32 rounded-full ${
+                className={`w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full ${
                   isDark ? 'bg-gray-800' : 'bg-gray-200'
                 } animate-pulse`}
               />
@@ -102,7 +102,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                 <img
                   src={user.avatar_url}
                   alt={user.name}
-                  className="relative w-32 h-32 rounded-full border-2 border-cyan-500 object-cover"
+                  className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-2 border-cyan-500 object-cover"
                 />
               </div>
             ) : null}
@@ -111,7 +111,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           {/* Name */}
           <motion.div variants={itemVariants}>
             <h1
-              className={`text-5xl md:text-7xl font-bold tracking-tight ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}
             >
@@ -122,7 +122,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           {/* Title/Stack */}
           <motion.div variants={itemVariants}>
             <p
-              className={`text-xl md:text-2xl font-medium ${
+              className={`text-base sm:text-lg md:text-xl lg:text-2xl font-medium ${
                 isDark ? 'text-cyan-400' : 'text-cyan-600'
               }`}
             >
@@ -133,7 +133,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           {/* Bio */}
           <motion.div variants={itemVariants}>
             <p
-              className={`text-lg max-w-2xl mx-auto ${
+              className={`text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed ${
                 isDark ? 'text-gray-400' : 'text-gray-600'
               }`}
             >
@@ -146,7 +146,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           {user?.location && (
             <motion.div variants={itemVariants}>
               <p
-                className={`text-sm ${
+                className={`text-xs sm:text-sm ${
                   isDark ? 'text-gray-500' : 'text-gray-500'
                 }`}
               >
@@ -156,69 +156,47 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           )}
 
           {/* Social Links */}
-          <motion.div variants={itemVariants} className="flex justify-center gap-6">
-            {user?.html_url && (
-              <a
-                href={user.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`p-3 rounded-lg transition-all duration-300 ${
-                  isDark
-                    ? 'bg-gray-800 hover:bg-cyan-500/20 text-gray-300 hover:text-cyan-400'
-                    : 'bg-gray-100 hover:bg-cyan-100 text-gray-700 hover:text-cyan-600'
-                }`}
-              >
-                <Github size={24} />
-              </a>
-            )}
+          <motion.div variants={itemVariants} className="flex justify-center gap-4 sm:gap-6">
+            <a
+              href="https://github.com/ytallobruno"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-3 sm:p-4 rounded-lg transition-all hover:scale-110 ${
+                isDark
+                  ? 'bg-gray-800 text-gray-400 hover:bg-cyan-500/20 hover:text-cyan-400'
+                  : 'bg-gray-100 text-gray-600 hover:bg-cyan-100 hover:text-cyan-600'
+              }`}
+              aria-label="GitHub"
+            >
+              <Github size={20} className="sm:w-6 sm:h-6" />
+            </a>
             <a
               href="https://linkedin.com/in/ytallobruno"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-3 rounded-lg transition-all duration-300 ${
+              className={`p-3 sm:p-4 rounded-lg transition-all hover:scale-110 ${
                 isDark
-                  ? 'bg-gray-800 hover:bg-cyan-500/20 text-gray-300 hover:text-cyan-400'
-                  : 'bg-gray-100 hover:bg-cyan-100 text-gray-700 hover:text-cyan-600'
+                  ? 'bg-gray-800 text-gray-400 hover:bg-cyan-500/20 hover:text-cyan-400'
+                  : 'bg-gray-100 text-gray-600 hover:bg-cyan-100 hover:text-cyan-600'
               }`}
+              aria-label="LinkedIn"
             >
-              <Linkedin size={24} />
+              <Linkedin size={20} className="sm:w-6 sm:h-6" />
             </a>
             <a
-              href="mailto:contact@example.com"
-              className={`p-3 rounded-lg transition-all duration-300 ${
+              href="mailto:ytallo.bruno@gmail.com"
+              className={`p-3 sm:p-4 rounded-lg transition-all hover:scale-110 ${
                 isDark
-                  ? 'bg-gray-800 hover:bg-cyan-500/20 text-gray-300 hover:text-cyan-400'
-                  : 'bg-gray-100 hover:bg-cyan-100 text-gray-700 hover:text-cyan-600'
+                  ? 'bg-gray-800 text-gray-400 hover:bg-cyan-500/20 hover:text-cyan-400'
+                  : 'bg-gray-100 text-gray-600 hover:bg-cyan-100 hover:text-cyan-600'
               }`}
+              aria-label="Email"
             >
-              <Mail size={24} />
+              <Mail size={20} className="sm:w-6 sm:h-6" />
             </a>
           </motion.div>
-
-
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <div
-          className={`w-6 h-10 border-2 rounded-full flex justify-center ${
-            isDark ? 'border-gray-600' : 'border-gray-400'
-          }`}
-        >
-          <motion.div
-            animate={{ y: [0, 4, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className={`w-1 h-2 rounded-full mt-2 ${
-              isDark ? 'bg-cyan-400' : 'bg-cyan-600'
-            }`}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 };

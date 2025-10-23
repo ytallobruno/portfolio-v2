@@ -38,7 +38,7 @@ const ExperienceSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className={`text-4xl font-bold mb-12 text-center ${
+          className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center ${
             isDark ? 'text-white' : 'text-gray-900'
           }`}
         >
@@ -49,19 +49,19 @@ const ExperienceSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {experiences.map((experience, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
-              className={`relative pl-8 border-l-2 pb-8 ${
+              className={`relative pl-6 sm:pl-8 border-l-2 pb-6 sm:pb-8 ${
                 isDark ? 'border-cyan-500' : 'border-cyan-600'
               }`}
             >
               {/* Timeline dot */}
               <div
-                className={`absolute -left-4 top-0 w-8 h-8 rounded-full ${
+                className={`absolute -left-3.5 sm:-left-4 top-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full ${
                   isDark ? 'bg-cyan-500' : 'bg-cyan-600'
                 }`}
               />
@@ -69,21 +69,21 @@ const ExperienceSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
               {/* Content */}
               <div>
                 <h3
-                  className={`text-2xl font-bold ${
+                  className={`text-lg sm:text-xl md:text-2xl font-bold ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   {experience.position}
                 </h3>
                 <p
-                  className={`text-sm font-medium ${
+                  className={`text-xs sm:text-sm font-medium ${
                     isDark ? 'text-cyan-400' : 'text-cyan-600'
                   }`}
                 >
                   {experience.company}
                 </p>
                 <p
-                  className={`text-sm ${
+                  className={`text-xs sm:text-sm ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
                   }`}
                 >
@@ -91,11 +91,11 @@ const ExperienceSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                 </p>
 
                 {/* Description */}
-                <div className="mt-4 space-y-2">
+                <div className="mt-3 sm:mt-4 space-y-1.5 sm:space-y-2">
                   {experience.description.map((desc, descIdx) => (
                     <p
                       key={descIdx}
-                      className={`text-sm leading-relaxed ${
+                      className={`text-xs sm:text-sm leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-700'
                       }`}
                     >
@@ -105,11 +105,11 @@ const ExperienceSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
                 </div>
 
                 {/* Tech tags */}
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
                   {experience.tech.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className={`text-xs px-3 py-1 rounded-full font-medium transition-all duration-300 hover:scale-105 cursor-default ${
+                      className={`text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full font-medium transition-all duration-300 hover:scale-105 cursor-default ${
                         isDark
                           ? 'bg-gray-700/80 text-cyan-300 hover:bg-cyan-500/30'
                           : 'bg-gray-100 text-cyan-700 hover:bg-gray-200'
