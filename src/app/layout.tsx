@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Ytallo Bruno - Software Engineer',
   description: 'Portfolio de Ytallo Bruno, desenvolvedor fullstack com experiência em Node.js, React e TypeScript.',
-  keywords: ['developer', 'portfolio', 'fullstack', 'react', 'nodejs'],
+  keywords: ['developer', 'portfolio', 'fullstack', 'react', 'nodejs', 'typescript', 'javascript', 'ytallo bruno'],
   authors: [{ name: 'Ytallo Bruno' }],
+  icons: {
+    icon: '/images/YB_LOGO.png',
+  },
 };
 
 export default function RootLayout({

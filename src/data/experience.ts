@@ -3,19 +3,23 @@ export interface Experience {
   position: string;
   startDate: string;
   endDate: string;
+  image: string;
   description: string[];
   tech: string[];
+  type: 'professional' | 'education';
 }
 
 export const experienceData: Experience[] = [
   {
     company: 'BTG Pactual',
-    position: 'Engenheiro de Software I',
+    position: 'Engenheiro de Software Pleno',
     startDate: '02/2025',
     endDate: 'atual',
+    type: 'professional',
+    image: '/images/logo_btg.png',
     description: [
-      'Atuação como Desenvolvedor Backend Pleno em equipe offshore, dando suporte a contas dos EUA e contribuindo para soluções financeiras de alta disponibilidade.',
-      'Desenvolvimento e otimização de funções serverless em AWS Lambda usando JavaScript e TypeScript, com modelagem de dados NoSQL em DynamoDB.',
+      'Atuação como Desenvolvedor Backend Pleno em equipe offshore, dando suporte a contas dos EUA e contribuindo para soluções financeiras com funções serverless em AWS Lambda.',
+      'Desenvolvi a solução responsável por pendenciar documentos a clientes/contas, reduzindo em 86% o esforço manual no processo de onboarding ao automatizar a atualização de dados bancários com as informações dos documentos pendenciados.',
       'Desenvolvimento e integração de projetos na nuvem Azure, expandindo a experiência multi-cloud.',
       'Manutenção e melhoria de pipelines CI/CD com Jenkins, automatizando processos de build e deploy.',
       'Participação ativa em reuniões técnicas com equipe e clientes dos EUA em ambiente internacional.',
@@ -39,9 +43,11 @@ export const experienceData: Experience[] = [
   },
   {
     company: 'Calindra Tech',
-    position: 'Software Developer II',
+    position: 'Desenvolvedor de Software II',
     startDate: '09/2024',
     endDate: '02/2025',
+    type: 'professional',
+    image: '/images/calindra_logo.jfif',
     description: [
       'Desenvolvimento de soluções inovadoras para a plataforma Stakkd.tech, com foco em backend robusto e escalável.',
       'Implementação de endpoints críticos com Node.js e TypeScript para gerenciamento autônomo de produtos por representantes.',
@@ -68,22 +74,12 @@ export const experienceData: Experience[] = [
     ],
   },
   {
-    company: 'PUC Minas - Pontifícia Universidade Católica de Minas Gerais',
-    position: 'Tecnólogo Análise e Desenvolvimento de Sistemas',
-    startDate: '02/2024',
-    endDate: 'atual',
-    description: [
-      "Destaque no primeiro semestre de 2024 na turma 4 com o projeto 'Fila Fácil', para melhorar a experiência do cliente em shoppings, focado em estabelecimentos gastronômicos.",
-      "Utilização de diversas tecnologias, com seus semestres sendo divididos em 'stacks'.",
-      'Desenvolvimento de habilidades de comunicação, trabalho em equipe, liderança e resolução de problemas.',
-    ],
-    tech: ['ASP.NET Core', 'C#', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Git', 'Kanban', 'React Native'],
-  },
-  {
     company: 'Calindra Tech',
-    position: 'Software Developer I',
+    position: 'Desenvolvedor de Software I',
     startDate: '01/2023',
     endDate: '09/2024',
+    type: 'professional',
+    image: '/images/calindra_logo.jfif',
     description: [
       'Desenvolvimento de soluções back-end em projetos críticos como Pix e Open Finance na Ame Digital, utilizando Java 17 e Spring Boot.',
       'Aplicação de princípios de programação reativa com WebFlux e desenvolvimento de testes unitários com JUnit e Mockito.',
@@ -93,9 +89,11 @@ export const experienceData: Experience[] = [
   },
   {
     company: 'Calindra Tech',
-    position: 'Software Developer Trainee',
+    position: 'Desenvolvedor de Software Trainee',
     startDate: '05/2022',
     endDate: '01/2023',
+    type: 'professional',
+    image: '/images/calindra_logo.jfif',
     description: [
       'Participação em uma formação intensiva de desenvolvimento de software, combinando teoria e prática para aprimorar habilidades técnicas e resolver desafios reais.',
       'Estudo intensivo de oito semanas focado em lógica de programação, estrutura de dados e orientação a objetos, seguido de um estágio rotativo de seis semanas.',
@@ -104,17 +102,53 @@ export const experienceData: Experience[] = [
     tech: ['Java', 'Spring Boot', 'JavaScript', 'TypeScript', 'Node.js', 'React.js', 'SQL', 'Scrum', 'Git'],
   },
   {
+    company: 'PUC Minas',
+    position: 'Análise e Desenvolvimento de Sistemas',
+    startDate: '02/2024',
+    endDate: '06/2026',
+    type: 'education',
+    image: '/images/logo_puc-minas.png',
+    description: [
+      "Destaque no primeiro semestre de 2024 na turma 4 com o projeto 'Fila Fácil', para melhorar a experiência do cliente em shoppings, focado em estabelecimentos gastronômicos.",
+      "Utilização de diversas tecnologias, com seus semestres sendo divididos em 'stacks'.",
+      'Desenvolvimento de habilidades de comunicação, trabalho em equipe, liderança e resolução de problemas.',
+    ],
+    tech: [
+      'ASP.NET Core',
+      'C#',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'Bootstrap',
+      'Tailwind',
+      'Git',
+      'Kanban',
+      'React',
+      'React Native',
+    ],
+  },
+  {
     company: 'Resilia Educação',
     position: 'Estudante WebDev Full Stack',
     startDate: '12/2021',
     endDate: '06/2022',
+    type: 'education',
+    image: '/images/resilia_educacao_logo.jfif',
     description: [
       'Formação intensiva de mais de 440 horas focadas em Desenvolvimento Web Full Stack e Soft Skills, além de contato com profissionais da área através da mentoria mensal.',
     ],
-    tech: ['HTML', 'CSS', 'Javascript', 'Git', 'Node', 'React', 'Scrum', 'Kanban'],
+    tech: ['HTML', 'CSS', 'Bootstrap', 'Javascript', 'Git', 'Node', 'Express', 'React', 'Scrum', 'Kanban'],
   },
 ];
 
 export function getExperienceData() {
   return experienceData;
+}
+
+export function getProfessionalExperience() {
+  return experienceData.filter((exp) => exp.type === 'professional');
+}
+
+export function getEducation() {
+  return experienceData.filter((exp) => exp.type === 'education');
 }

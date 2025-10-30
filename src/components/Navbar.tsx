@@ -56,25 +56,23 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? isDark
-            ? 'bg-gray-950/80 backdrop-blur-md border-b border-gray-800'
-            : 'bg-white/80 backdrop-blur-md border-b border-gray-200'
+            ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800'
+            : 'bg-white/80 backdrop-blur-md border-b border-zinc-200'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Name */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href="#hero" onClick={() => scrollToSection('hero')}>
-              <span className={`text-xl font-bold transition-colors ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <span className={`text-xl font-bold transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                 YB
               </span>
             </Link>
           </div>
 
-          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => (
+            {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -84,8 +82,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
                       ? 'text-cyan-400'
                       : 'text-cyan-600'
                     : isDark
-                      ? 'text-gray-400 hover:text-white'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-zinc-400 hover:text-white'
+                      : 'text-zinc-600 hover:text-zinc-900'
                 }`}
               >
                 {item.label}
@@ -102,38 +100,35 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+              isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'
             }`}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Theme Toggle */}
-          <button
+          {/* <button
             onClick={onThemeToggle}
             className={`p-2 rounded-lg transition-colors ${
-              isDark ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+              isDark ? 'bg-zinc-800 hover:bg-zinc-700 text-yellow-400' : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-800'
             }`}
             aria-label="Toggle theme"
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+          </button> */}
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div
             className={`md:hidden border-t ${
-              isDark ? 'border-gray-800 bg-gray-900/95' : 'border-gray-200 bg-white/95'
+              isDark ? 'border-zinc-800 bg-zinc-900/95' : 'border-zinc-200 bg-white/95'
             }`}
           >
             <div className="px-4 py-4 space-y-3">
-              {navItems.map(item => (
+              {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -143,8 +138,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
                         ? 'bg-cyan-500/20 text-cyan-400'
                         : 'bg-cyan-100 text-cyan-600'
                       : isDark
-                        ? 'text-gray-400 hover:bg-gray-800 hover:text-white'
-                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                        ? 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
+                        : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
                   }`}
                 >
                   {item.label}

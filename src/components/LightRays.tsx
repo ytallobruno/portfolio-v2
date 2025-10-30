@@ -92,7 +92,7 @@ const LightRays: React.FC<LightRaysProps> = ({
     if (!containerRef.current) return;
 
     observerRef.current = new IntersectionObserver(
-      entries => {
+      (entries) => {
         const entry = entries[0];
         setIsVisible(entry.isIntersecting);
       },
@@ -120,7 +120,7 @@ const LightRays: React.FC<LightRaysProps> = ({
     const initializeWebGL = async () => {
       if (!containerRef.current) return;
 
-      await new Promise(resolve => setTimeout(resolve, 10));
+      await new Promise((resolve) => setTimeout(resolve, 10));
 
       if (!containerRef.current) return;
 
@@ -209,10 +209,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   }
 
   vec4 rays1 = vec4(1.0) *
-               rayStrength(rayPos, finalRayDir, coord, 36.2214, 21.11349,
+              rayStrength(rayPos, finalRayDir, coord, 36.2214, 21.11349,
                            1.5 * raysSpeed);
   vec4 rays2 = vec4(1.0) *
-               rayStrength(rayPos, finalRayDir, coord, 22.3991, 18.0234,
+              rayStrength(rayPos, finalRayDir, coord, 22.3991, 18.0234,
                            1.1 * raysSpeed);
 
   fragColor = rays1 * 0.5 + rays2 * 0.4;
@@ -427,7 +427,7 @@ void main() {
   return (
     <div
       ref={containerRef}
-      className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
+      className={`w-full h-full pointer-events-none z-3 overflow-hidden relative ${className}`.trim()}
     />
   );
 };
