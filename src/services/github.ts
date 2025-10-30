@@ -15,7 +15,7 @@ const USERNAME = 'ytallobruno';
 export async function fetchGitHubUser(username: string = USERNAME): Promise<GitHubUser | null> {
   try {
     const response = await fetch(`${GITHUB_API_URL}/users/${username}`, {
-      // next: { revalidate: 3600 },
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
