@@ -39,9 +39,9 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -49,8 +49,8 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
   };
 
   return (
@@ -78,12 +78,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-6 sm:space-y-8"
-        >
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-6 sm:space-y-8">
           {/* Avatar */}
           <motion.div variants={itemVariants} className="flex justify-center">
             {loading ? (
@@ -95,9 +90,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
             ) : user ? (
               <div className="relative">
                 <div
-                  className={`absolute inset-0 rounded-full blur-xl ${
-                    isDark ? 'bg-cyan-500/20' : 'bg-cyan-400/20'
-                  }`}
+                  className={`absolute inset-0 rounded-full blur-xl ${isDark ? 'bg-cyan-500/20' : 'bg-cyan-400/20'}`}
                 />
                 <img
                   src={user.avatar_url}
@@ -145,13 +138,7 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
           {/* Location */}
           {user?.location && (
             <motion.div variants={itemVariants}>
-              <p
-                className={`text-xs sm:text-sm ${
-                  isDark ? 'text-gray-500' : 'text-gray-500'
-                }`}
-              >
-                📍 {user.location}
-              </p>
+              <p className={`text-xs sm:text-sm ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>📍 {user.location}</p>
             </motion.div>
           )}
 
@@ -183,7 +170,6 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
             >
               <Linkedin size={20} className="sm:w-6 sm:h-6" />
             </a>
-
           </motion.div>
         </motion.div>
       </div>
@@ -192,4 +178,3 @@ const HeroSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
 };
 
 export default HeroSection;
-

@@ -13,9 +13,9 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -23,17 +23,12 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 }
-    }
+      transition: { duration: 0.8 },
+    },
   };
 
   return (
-    <section
-      id="projects"
-      className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${
-        isDark ? 'bg-gray-900' : 'bg-gray-50'
-      }`}
-    >
+    <section id="projects" className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -57,15 +52,15 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
               key={idx}
               variants={itemVariants}
               className={`group rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col ${
-                isDark ? 'bg-gray-800 border border-gray-700/50' : 'bg-white border border-gray-300 hover:border-cyan-500'
+                isDark
+                  ? 'bg-gray-800 border border-gray-700/50'
+                  : 'bg-white border border-gray-300 hover:border-cyan-500'
               }`}
             >
               {/* Image */}
               <div
                 className={`h-40 sm:h-48 overflow-hidden relative bg-gradient-to-br ${
-                  isDark
-                    ? 'from-gray-800 to-gray-700'
-                    : 'from-gray-200 to-gray-100'
+                  isDark ? 'from-gray-800 to-gray-700' : 'from-gray-200 to-gray-100'
                 }`}
               >
                 <img
@@ -77,18 +72,10 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
 
               {/* Content */}
               <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                <h3
-                  className={`text-lg sm:text-xl font-bold mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}
-                >
+                <h3 className={`text-lg sm:text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {project.title}
                 </h3>
-                <p
-                  className={`text-xs sm:text-sm mb-4 leading-relaxed ${
-                    isDark ? 'text-gray-400' : 'text-gray-600'
-                  }`}
-                >
+                <p className={`text-xs sm:text-sm mb-4 leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                   {project.description}
                 </p>
                 <div className="flex gap-3 sm:gap-4 mt-auto">
@@ -127,4 +114,3 @@ const ProjectsSection: React.FC<{ isDark: boolean }> = ({ isDark }) => {
 };
 
 export default ProjectsSection;
-

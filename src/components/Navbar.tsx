@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
     { id: 'hero', label: 'Home' },
     { id: 'experience', label: 'Experiência' },
     { id: 'skills', label: 'Habilidades' },
-    { id: 'projects', label: 'Projetos' }
+    { id: 'projects', label: 'Projetos' },
   ];
 
   return (
@@ -66,11 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
           {/* Logo/Name */}
           <div className="flex-shrink-0">
             <Link href="#hero" onClick={() => scrollToSection('hero')}>
-              <span
-                className={`text-xl font-bold transition-colors ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}
-              >
+              <span className={`text-xl font-bold transition-colors ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 YB
               </span>
             </Link>
@@ -88,8 +84,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
                       ? 'text-cyan-400'
                       : 'text-cyan-600'
                     : isDark
-                    ? 'text-gray-400 hover:text-white'
-                    : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-gray-400 hover:text-white'
+                      : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {item.label}
@@ -110,9 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              isDark
-                ? 'text-gray-400 hover:text-white'
-                : 'text-gray-600 hover:text-gray-900'
+              isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'
             }`}
             aria-label="Toggle mobile menu"
           >
@@ -123,9 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
           <button
             onClick={onThemeToggle}
             className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400'
-                : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+              isDark ? 'bg-gray-800 hover:bg-gray-700 text-yellow-400' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
             }`}
             aria-label="Toggle theme"
           >
@@ -137,9 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
         {isMobileMenuOpen && (
           <div
             className={`md:hidden border-t ${
-              isDark
-                ? 'border-gray-800 bg-gray-900/95'
-                : 'border-gray-200 bg-white/95'
+              isDark ? 'border-gray-800 bg-gray-900/95' : 'border-gray-200 bg-white/95'
             }`}
           >
             <div className="px-4 py-4 space-y-3">
@@ -153,8 +143,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
                         ? 'bg-cyan-500/20 text-cyan-400'
                         : 'bg-cyan-100 text-cyan-600'
                       : isDark
-                      ? 'text-gray-400 hover:bg-gray-800 hover:text-white'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                        ? 'text-gray-400 hover:bg-gray-800 hover:text-white'
+                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                   }`}
                 >
                   {item.label}
@@ -169,4 +159,3 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, onThemeToggle }) => {
 };
 
 export default Navbar;
-

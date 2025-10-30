@@ -23,9 +23,7 @@ export default function Home() {
 
   return (
     <div className={isDark ? 'dark' : ''}>
-      <div className={`transition-colors duration-300 ${
-        isDark ? 'bg-gray-950 text-white' : 'bg-white text-gray-900'
-      }`}>
+      <div className={`transition-colors duration-300 ${isDark ? 'bg-gray-950 text-white' : 'bg-white text-gray-900'}`}>
         <Navbar isDark={isDark} onThemeToggle={toggleTheme} />
         <HeroSection isDark={isDark} />
         <ExperienceSection isDark={isDark} />
@@ -36,4 +34,3 @@ export default function Home() {
     </div>
   );
 }
-
