@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description:
       'Projeto destaque do eixo 1 do curso de ADS da PUC Minas para melhorar a experiência do cliente em shoppings, focado em estabelecimentos gastronômicos.',
     image: '/images/placeholderIcon.jpg',
-    link: 'https://github.com/ytallobruno/ads-2024-e1-proj-fila-facil',
+    link: 'https://github.com/ytallobruno/puc-filafacil',
     projectLink:
       'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t4-pmv-ads-2024-1-e1-proj-fila-facil/src/index.html',
   },
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     description:
       'Projeto do eixo 2 do curso de ADS da PUC Minas para melhorar a experiência de contratação de serviços, conectando clientes a prestadores como faxineiros e eletricistas',
     image: '/images/placeholderIcon.jpg',
-    link: 'https://github.com/ytallobruno/ads-2024-e2-proj-servico-facil',
+    link: 'https://github.com/ytallobruno/puc-servicofacil',
     projectLink: 'https://servicofacil.azurewebsites.net/',
   },
   {
